@@ -49,7 +49,8 @@ public class IRTController {
             HttpEntity<MultiValueMap<String, Object>> requestEntity = new HttpEntity<>(body, headers);
 
             // Send the file to the Flask service
-            String flaskUrl = "http://localhost:5000/api/irt/analyze"; // Flask service URL
+            String flaskUrl = "https://irt-backend-python-98303130f255.herokuapp.com/api/irt/analyze"; // Flask service
+                                                                                                       // URL
             ResponseEntity<List> flaskResponse = restTemplate.postForEntity(flaskUrl, requestEntity, List.class);
 
             // Create a response to return to the client
